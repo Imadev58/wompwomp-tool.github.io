@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Tool</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            background-color: black;
+            color: green;
+            border: 1px solid green;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: green;
+            color: black;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>WOMP WOMP TOOL</h1>
+    <div class="options">
+        <button onclick="displayText('1')">1. Token Gen</button>
+        <button onclick="displayText('2')">2. Mass DM PB</button>
+        <button onclick="displayText('3')">3. Email Gen</button>
+    </div>
+    <div id="output"></div>
+
+    <script>
+        const options = {
+            "1": "uh idk yet",
+            "2": "Get A massdm PB that u can sell plans and earn $$$",
+            "3": "Generate email addresses for various purposes"
+        };
+
+        function displayText(option) {
+            const outputDiv = document.getElementById('output');
+            if (options[option]) {
+                outputDiv.textContent = options[option];
+            } else {
+                outputDiv.textContent = "Invalid option. Please choose a valid option.";
+            }
+        }
+    </script>
+</body>
+</html>
