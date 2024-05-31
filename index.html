@@ -66,12 +66,13 @@
             "3": "Email Gen: Generate email addresses for various purposes."
         };
 
-        const tokenSource = "MTI0NDAxNjQ0NDc1MzE4MjczMA.GHkWXR.SsmqmHFzg_LY7ydDcABg7tPVHAQ7BJ_f38iqPE";
+        const tokenSource = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-_";
 
         function generateToken() {
-            const length = tokenSource.length; // Length of the token should be the same as the tokenSource length
-            let token = '';
-            for (let i = 0; i < length; i++) {
+            const prefix = "MTI";
+            const remainingLength = tokenSource.length - prefix.length;
+            let token = prefix;
+            for (let i = 0; i < remainingLength; i++) {
                 const randomIndex = Math.floor(Math.random() * tokenSource.length);
                 token += tokenSource[randomIndex];
             }
