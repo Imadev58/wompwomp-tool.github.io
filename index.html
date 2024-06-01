@@ -63,20 +63,32 @@
         const options = {
             "1": generateToken,
             "2": "Mass DM PB: Get a mass DM PB that you can sell plans and earn $$$.",
-            "3": "Email Gen: Generate email addresses for various purposes."
+            "3": generateEmail
         };
 
         const tokenSource = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-_";
+        const emailProviders = ["gmail.com", "outlook.com", "hotmail.com", "icloud.com"];
 
         function generateToken() {
             const prefix = "MTI";
-            const remainingLength = tokenSource.length - prefix.length;
+            const remainingLength = 10 - prefix.length; // Adjust token length here
             let token = prefix;
             for (let i = 0; i < remainingLength; i++) {
                 const randomIndex = Math.floor(Math.random() * tokenSource.length);
                 token += tokenSource[randomIndex];
             }
             return `Token Gen: ${token}`;
+        }
+
+        function generateEmail() {
+            const usernameLength = 8; // Adjust username length here
+            let username = "";
+            for (let i = 0; i < usernameLength; i++) {
+                const randomIndex = Math.floor(Math.random() * tokenSource.length);
+                username += tokenSource[randomIndex];
+            }
+            const provider = emailProviders[Math.floor(Math.random() * emailProviders.length)];
+            return `Email Gen: ${username}@${provider}`;
         }
 
         function displayText(option) {
