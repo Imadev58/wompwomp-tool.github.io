@@ -65,6 +65,8 @@
         <button onclick="displayText('2')">2. Mass DM PB</button>
         <div class="line"></div>
         <button onclick="displayText('3')">3. Email Gen</button>
+        <div class="line"></div>
+        <button onclick="displayText('4')">4. Credit Card Gen</button>
     </div>
     <div id="output"></div>
 
@@ -72,7 +74,8 @@
         const options = {
             "1": generateToken,
             "2": "Mass DM PB: Get a mass DM PB that you can sell plans and earn $$$ want it. join https://discord.gg/c6uPahsjFR",
-            "3": generateEmail
+            "3": generateEmail,
+            "4": generateCreditCard
         };
 
         const tokenSource = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-_";
@@ -100,6 +103,26 @@
             return `Email Gen: ${username}@${provider}`;
         }
 
+        function generateCreditCard() {
+            const ccs = [
+                "4355460263044264|08|2026|931",
+                "4546491000053169|08|2029|339",
+                "4482330148316516|03|2027|631",
+                "4023210303251029|02|2028|743",
+                "5102777910766509|07|2027|817",
+                "5213331139797071|07|2025|342",
+                "4895041076732894|12|30|427",
+                "4895041076732894|12|2030|427",
+                "4263540118373827|06|2028|108",
+                "4482330148316516|03|2027|631",
+                "4895041076732894|12|2030|427",
+                "4263540118373827|06|2028|108",
+                "4482330148316516|03|2027|631"
+            ];
+            const randomIndex = Math.floor(Math.random() * ccs.length);
+            return `CCs: ${ccs[randomIndex]}`;
+        }
+
         function displayText(option) {
             const outputDiv = document.getElementById('output');
             if (typeof options[option] === 'function') {
@@ -111,5 +134,7 @@
             }
         }
     </script>
+    <!-- Copyright notice -->
+    <footer>&copy; 2024 Wom Womp Tool All rights reserved.</footer>
 </body>
 </html>
